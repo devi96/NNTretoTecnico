@@ -48,4 +48,4 @@ Reto técnico de NNT
 
 ## Notas
 - Actualmente las personas son generadas consumiendo el servicio https://randomuser.me/api/?results=10.
-- Se pueden hacer mejoras como guardar la información en una base de datos o consumir los servicios de RandomUser con `RestTemplate` para un mejor manejo y cacheo de datos.
+- Se pueden hacer mejoras como guardar la información en una base de datos o consumir los servicios de RandomUser con `RestTemplate` y guardalos en otro modelo de datos.
