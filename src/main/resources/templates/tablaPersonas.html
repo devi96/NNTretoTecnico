@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Personas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+        img {
+            max-width: 60px;
+            max-height: 60px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Lista de Personas</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>Ubicación</th>
+            <th>Correo</th>
+            <th>Fecha de Nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="persona : ${personas}">
+            <td><img th:src="${persona.urlFoto}" alt="Foto de [[${persona.nombre}]]" /></td>
+            <td th:text="${persona.nombre}">Nombre</td>
+            <td th:text="${persona.genero}">Género</td>
+            <td th:text="${persona.ubicacion}">Ubicación</td>
+            <td><a th:href="'mailto:' + ${persona.correo}" th:text="${persona.correo}">Correo</a></td>
+            <td th:text="${#dates.format(persona.fechaNacimiento, 'dd/MM/yyyy')}">Fecha</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
